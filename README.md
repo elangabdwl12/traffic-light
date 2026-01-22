@@ -4,7 +4,7 @@ Halo! 👋 Ini adalah mini-project yang saya buat untuk melatih logika pemrogram
 
 Tujuan project ini adalah mensimulasikan logika lampu lalu lintas, mulai dari pengaturan waktu (timer), manipulasi DOM, hingga logika pengaman agar tombol tidak tabrakan.
 
-🔗 **Coba Mainkan di sini:** [https://elangabdwl12.github.io/traffic-light-js/](https://elangabdwl12.github.io/traffic-light/)
+🔗 **Coba Mainkan di sini:** [Klik disini untuk mencoba](https://elangabdwl12.github.io/traffic-light/)
 
 ## Apa saja fiturnya? ✨
 
