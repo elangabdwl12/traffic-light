@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Traffic Light</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* EFEK LAMPU */
+      body {
+        background-color: #1a1a1a;
+        color: white;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      /* Kotak Lampu */
+      .traffic-box {
+        background-color: #2d2d2d;
+        border: 4px solid #000;
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        display: inline-flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      /* Bentuk Dasar Lampu (Mati) */
+      .light {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: #444;
+        border: 2px solid #000;
+        transition: all 0.3s ease;
+        opacity: 0.3;
+      }
+      /* Saat merah nyala */
+      .red.active {
+        background-color: #ff0000;
+        box-shadow:
+          0 0 20px #ff0000,
+          0 0 40px #ff0000;
+        opacity: 1;
+      }
+
+      /* Saat kuning nyala */
+      .yellow.active {
+        background-color: #ffff00;
+        box-shadow:
+          0 0 20px #ffff00,
+          0 0 40px #ffff00;
+        opacity: 1;
+      }
+
+      /* Saat hijau nyala */
+      .green.active {
+        background-color: #00ff00;
+        box-shadow:
+          0 0 20px #00ff00,
+          0 0 40px #00ff00;
+        opacity: 1;
+      }
+
+      /* Tombol Button */
+      .btn {
+        background-color: #333;
+        border: 1px solid #555;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.1s;
+        font-weight: bold;
+      }
+      .btn:active {
+        transform: scale(0.95);
+      }
+      .btn:hover {
+        background-color: #444;
+      }
+      /* Efek Glow saat aktif */
+      #merah.active {
+        background-color: red;
+        box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.7);
+      }
+
+      #kuning.active {
+        background-color: yellow;
+        box-shadow: 0 0 20px 5px rgba(255, 255, 0, 0.7);
+      }
+
+      #hijau.active {
+        background-color: green;
+        box-shadow: 0 0 20px 5px rgba(0, 255, 0, 0.7);
+      }
+
+      /* 1. Supaya angkanya pas di tengah */
+      .light {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: #444;
+        border: 2px solid #000;
+        transition: all 0.3s ease;
+        opacity: 0.3;
+        margin: 0 auto;
+
+        /* Flexbox buat nengahin angka */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .timer-angka {
+        font-size: 35px;
+        font-weight: bold;
+        color: #333;
+        visibility: hidden;
+      }
+
+      .light.active .timer-angka {
+        visibility: visible;
+        color: black;
+      }
+    </style>
+  </head>
+  <body class="flex flex-col items-center justify-center min-h-screen">
+    <h1 class="text-3xl font-bold mb-8">Project Traffic Light</h1>
+
+    <!-- WADAH LAMPU -->
+    <div class="traffic-box mb-8">
+      <!-- Ini Lampu Merah (ID: merah) -->
+      <div id="merah" class="light red">
+        <span id="timer-merah" class="timer-angka"></span>
+      </div>
+
+      <!-- Ini Lampu Kuning (ID: kuning) -->
+      <div id="kuning" class="light yellow">
+        <span id="timer-kuning" class="timer-angka"></span>
+      </div>
+
+      <!-- Ini Lampu Hijau (ID: hijau) -->
+      <div id="hijau" class="light green">
+        <span id="timer-hijau" class="timer-angka"></span>
+      </div>
+    </div>
+
+    <!-- TOMBOL KONTROL -->
+    <div class="space-x-4">
+      <button
+        id="btn-stop"
+        class="btn text-red-400 border-red-900 hover:bg-red-900/20"
+      >
+        STOP (Merah)
+      </button>
+      <button
+        id="btn-wait"
+        class="btn text-yellow-400 border-yellow-900 hover:bg-yellow-900/20"
+      >
+        WAIT (Kuning)
+      </button>
+      <button
+        id="btn-go"
+        class="btn text-green-400 border-green-900 hover:bg-green-900/20"
+      >
+        GO (Hijau)
+      </button>
+    </div>
+
+    <div class="mt-4">
+      <button id="btn-reset" class="btn w-full">Matikan Semua</button>
+    </div>
+
+    <div class="mt-4">
+      <button id="btn-auto" class="btn w-full text-blue-400 border-blue-900">
+        Mode Otomatis
+      </button>
+    </div>
+
+    <!-- APP.JS -->
+    <script src="/trafficLight/app.js"></script>
+  </body>
+</html>
