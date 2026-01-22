@@ -18,7 +18,7 @@ Project ini punya dua mode utama:
 * Lampu akan berjalan sendiri secara bergantian (Looping).
 * Durasi waktunya saya set serealistis mungkin:
     * 🔴 Merah: 10 Detik
-    * 🟡 Kuning: 8 Detik
+    * 🟡 Kuning: 10 Detik
     * 🟢 Hijau: 10 Detik
 * **Countdown Timer:** Ada angka hitung mundur di tengah lampu biar tahu sisa waktunya.
 
