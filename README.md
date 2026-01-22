@@ -31,16 +31,4 @@ Project ini punya dua mode utama:
 * **Tailwind CSS:** Untuk styling tombol dan layout biar rapi dan responsif.
 * **JavaScript:** Murni JavaScript (tanpa Framework) untuk menangani logika `setTimeout`, `setInterval`, dan DOM Event.
 
-## Cara Menjalankan di Laptop 💻
-
-Kalau mau coba atau otak-atik kodenya di komputer sendiri:
-
-1.  Clone repo ini:
-    ```bash
-    git clone [https://github.com/ElangUye12/traffic-light-js.git](https://github.com/ElangUye12/traffic-light-js.git)
-    ```
-2.  Buka filenya.
-3.  Klik 2x pada file `index.html` dan project langsung jalan di browser.
-
----
 *Project ini adalah bagian dari perjalanan saya belajar JavaScript dari nol (Zero to Hero).* 🚀
